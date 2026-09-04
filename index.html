@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>AlendaTools | Smarter Tools for Living and Working</title>
+
+  <meta
+    name="description"
+    content="Simple digital tools, spreadsheets and templates designed to save time, simplify work and make everyday decisions easier."
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f7f5;
+      color: #1d1d1f;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: 0 auto;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e6e6e6;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      opacity: 0.65;
+    }
+
+    .hero {
+      padding: 110px 0 90px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: #eaf3ea;
+      color: #355b39;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    h1 {
+      max-width: 850px;
+      margin: 0 auto;
+      font-size: clamp(2.7rem, 7vw, 5rem);
+      line-height: 1.05;
+      letter-spacing: -3px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: 28px auto 0;
+      font-size: 1.15rem;
+      color: #606060;
+    }
+
+    .hero-buttons {
+      margin-top: 35px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: 0.2s;
+    }
+
+    .button-primary {
+      background: #1f442c;
+      color: white;
+    }
+
+    .button-primary:hover {
+      background: #173522;
+    }
+
+    .button-secondary {
+      background: white;
+      border: 1px solid #d7d7d7;
+    }
+
+    .button-secondary:hover {
+      background: #efefec;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-heading h2 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      letter-spacing: -1px;
+    }
+
+    .section-heading p {
+      color: #666;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .product-card {
+      background: white;
+      border: 1px solid #e4e4e4;
+      border-radius: 14px;
+      padding: 28px;
+      min-height: 230px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-type {
+      font-size: 0.8rem;
+      color: #6d806f;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 12px;
+    }
+
+    .product-card h3 {
+      font-size: 1.25rem;
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+
+    .product-card p {
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+    }
+
+    .product-card a {
+      margin-top: auto;
+      font-weight: 700;
+      color: #245533;
+    }
+
+    .why {
+      background: #202820;
+      color: white;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+
+    .why-item h3 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+
+    .why-item p {
+      color: #cbd2cb;
+    }
+
+    .coming-soon {
+      text-align: center;
+      background: #e9efe9;
+    }
+
+    .coming-soon h2 {
+      font-size: 2.1rem;
+      margin-bottom: 15px;
+    }
+
+    .coming-soon p {
+      max-width: 650px;
+      margin: 0 auto;
+      color: #5e685f;
+    }
+
+    footer {
+      background: #ffffff;
+      border-top: 1px solid #e4e4e4;
+      padding: 35px 0;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 800px) {
+      .nav-links {
+        display: none;
+      }
+
+      .products-grid,
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 80px 0 65px;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#" class="logo">AlendaTools</a>
+
+        <div class="nav-links">
+          <a href="#tools">Digital Tools</a>
+          <a href="#why">Why AlendaTools</a>
+          <a href="#coming-soon">Coming Soon</a>
+          <a href="mailto:hello@alendatools.com">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="container">
+
+        <span class="eyebrow">Simple tools. Useful results.</span>
+
+        <h1>Smarter tools for living and working.</h1>
+
+        <p>
+          Practical spreadsheets, templates and digital tools designed
+          to save time, simplify decisions and make everyday work easier.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#tools" class="button button-primary">
+            Explore Digital Tools
+          </a>
+
+          <a href="#coming-soon" class="button button-secondary">
+            What's Coming
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <section id="tools">
+      <div class="container">
+
+        <div class="section-heading">
+          <h2>Digital Tools</h2>
+
+          <p>
+            Straightforward tools for small businesses and independent
+            professionals. No complicated software and no unnecessary features.
+          </p>
+        </div>
+
+        <div class="products-grid">
+
+          <article class="product-card">
+            <div class="product-type">Excel Tool</div>
+
+            <h3>Product Pricing Calculator</h3>
+
+            <p>
+              Calculate selling prices, costs, profit margins and markups
+              quickly and clearly.
+            </p>
+
+            <a href="#">View tool →</a>
+          </article>
+
+
+          <article class="product-card">
+            <div class="product-type">Excel Tool</div>
+
+            <h3>12-Month Cash Flow Forecast</h3>
+
+            <p>
+              Plan your expected income, expenses and monthly cash position
+              across the year.
+            </p>
+
+            <a href="#">View tool →</a>
+          </article>
+
+
+          <article class="product-card">
+            <div class="product-type">Excel Tool</div>
+
+            <h3>Invoice Payment Tracker</h3>
+
+            <p>
+              Keep track of invoices, payment status, due dates and outstanding
+              customer balances.
+            </p>
+
+            <a href="#">View tool →</a>
+          </article>
+
+
+          <article class="product-card">
+            <div class="product-type">Excel Tool</div>
+
+            <h3>UK Business Mileage Tracker</h3>
+
+            <p>
+              Record business journeys and organise mileage information
+              in a simple spreadsheet.
+            </p>
+
+            <a href="#">View tool →</a>
+          </article>
+
+
+          <article class="product-card">
+            <div class="product-type">Excel Tool</div>
+
+            <h3>Inventory Tracker</h3>
+
+            <p>
+              Monitor stock levels, product values and inventory movements
+              without complicated software.
+            </p>
+
+            <a href="#">View tool →</a>
+          </article>
+
+
+          <article class="product-card">
+            <div class="product-type">Bundle</div>
+
+            <h3>Small Business Spreadsheet Bundle</h3>
+
+            <p>
+              A collection of practical Excel tools for managing the everyday
+              numbers behind a small business.
+            </p>
+
+            <a href="#">View bundle →</a>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="why" id="why">
+      <div class="container">
+
+        <div class="section-heading">
+          <h2>Built to be useful.</h2>
+
+          <p>
+            AlendaTools focuses on practical solutions rather than unnecessary
+            complexity.
+          </p>
+        </div>
+
+        <div class="why-grid">
+
+          <div class="why-item">
+            <h3>Simple</h3>
+            <p>
+              Open the tool, understand what it does and start using it.
+            </p>
+          </div>
+
+          <div class="why-item">
+            <h3>Practical</h3>
+            <p>
+              Every product starts with a real problem that needs solving.
+            </p>
+          </div>
+
+          <div class="why-item">
+            <h3>No subscriptions</h3>
+            <p>
+              Our downloadable tools are designed to be purchased once
+              and used whenever you need them.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="coming-soon" id="coming-soon">
+      <div class="container">
+
+        <h2>We're building more than spreadsheets.</h2>
+
+        <p>
+          AlendaTools is expanding into simple online tools and practical
+          products designed to make everyday living and working more efficient.
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer>
+    <div class="container footer-content">
+
+      <span>© 2026 AlendaTools</span>
+
+      <span>
+        Questions?
+        <a href="mailto:hello@alendatools.com">hello@alendatools.com</a>
+      </span>
+
+    </div>
+  </footer>
+
+</body>
+</html>
