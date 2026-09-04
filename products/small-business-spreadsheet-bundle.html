@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Small Business Spreadsheet Bundle | AlendaTools</title>
+
+  <meta
+    name="description"
+    content="A bundle of practical Excel spreadsheets for small businesses, including tools for pricing, cash flow, invoices, mileage and inventory."
+>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f7f5;
+      color: #1d1d1f;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: 0 auto;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e6e6e6;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      opacity: 0.65;
+    }
+
+    .breadcrumb {
+      padding: 28px 0 0;
+      font-size: 0.9rem;
+      color: #6d6d6d;
+    }
+
+    .breadcrumb a {
+      color: #245533;
+      font-weight: 700;
+    }
+
+    .product-hero {
+      padding: 45px 0 70px;
+    }
+
+    .product-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .main-image {
+      background: white;
+      border: 1px solid #e4e4e4;
+      border-radius: 16px;
+      padding: 18px;
+    }
+
+    .main-image img {
+      border-radius: 10px;
+      width: 100%;
+    }
+
+    .product-type {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 6px 11px;
+      border-radius: 999px;
+      background: #eaf3ea;
+      color: #355b39;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+    }
+
+    h1 {
+      font-size: clamp(2.3rem, 5vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: -2px;
+      margin-bottom: 22px;
+    }
+
+    .intro {
+      color: #5d5d5d;
+      font-size: 1.1rem;
+      margin-bottom: 26px;
+    }
+
+    .highlight-box {
+      background: white;
+      border: 1px solid #e2e2e2;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 25px;
+    }
+
+    .highlight-box ul {
+      padding-left: 20px;
+    }
+
+    .highlight-box li {
+      margin-bottom: 8px;
+    }
+
+    .buy-button {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      background: #1f442c;
+      color: white;
+      padding: 16px 24px;
+      border-radius: 9px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      transition: 0.2s;
+    }
+
+    .buy-button:hover {
+      background: #173522;
+    }
+
+    .buy-note {
+      margin-top: 12px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #777;
+    }
+
+    section {
+      padding: 75px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 42px;
+    }
+
+    .section-heading h2 {
+      font-size: 2.1rem;
+      margin-bottom: 10px;
+      letter-spacing: -1px;
+    }
+
+    .section-heading p {
+      color: #666;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .gallery-item {
+      background: white;
+      border: 1px solid #e4e4e4;
+      border-radius: 14px;
+      padding: 14px;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      border-radius: 9px;
+    }
+
+    .features {
+      background: #202820;
+      color: white;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+
+    .feature h3 {
+      margin-bottom: 10px;
+    }
+
+    .feature p {
+      color: #cbd2cb;
+    }
+
+    .how-it-works-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .step {
+      background: white;
+      border: 1px solid #e4e4e4;
+      border-radius: 14px;
+      padding: 28px;
+    }
+
+    .step-number {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #527059;
+      margin-bottom: 10px;
+    }
+
+    .step h3 {
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      color: #666;
+    }
+
+    .cta {
+      background: #e9efe9;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 2rem;
+      margin-bottom: 14px;
+    }
+
+    .cta p {
+      max-width: 620px;
+      margin: 0 auto 25px;
+      color: #5e685f;
+    }
+
+    .cta .buy-button {
+      width: auto;
+      min-width: 220px;
+    }
+
+    footer {
+      background: white;
+      border-top: 1px solid #e4e4e4;
+      padding: 35px 0;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 800px) {
+      .nav-links {
+        display: none;
+      }
+
+      .product-layout,
+      .gallery,
+      .features-grid,
+      .how-it-works-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product-layout {
+        gap: 35px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <nav>
+        <a href="../index.html" class="logo">AlendaTools</a>
+
+        <div class="nav-links">
+          <a href="../index.html#tools">Digital Tools</a>
+          <a href="../index.html#why">Why AlendaTools</a>
+          <a href="mailto:hello@alendatools.com">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="container breadcrumb">
+      <a href="../index.html">Home</a>
+      &nbsp;→&nbsp;
+      Small Business Spreadsheet Bundle
+    </div>
+
+    <section class="product-hero">
+      <div class="container product-layout">
+
+        <div class="main-image">
+          <img
+            src="../assets/images/Alenda-Tools-Bundle-Worldwide-Image-1.png"
+            alt="Small Business Spreadsheet Bundle by AlendaTools"
+          >
+        </div>
+
+        <div>
+          <span class="product-type">Excel Bundle</span>
+
+          <h1>Small Business Spreadsheet Bundle</h1>
+
+          <p class="intro">
+            A collection of practical Excel spreadsheets for small businesses,
+            including tools for pricing, cash flow, invoices, mileage and inventory.
+          </p>
+
+          <div class="highlight-box">
+            <ul>
+               <li>Multiple practical Excel business tools</li>
+    <li>Product pricing and profitability</li>
+    <li>Cash flow planning</li>
+    <li>Invoice, mileage and inventory tracking</li>
+    <li>One purchase, multiple reusable spreadsheets</li>
+            </ul>
+          </div>
+
+          <a
+            class="buy-button"
+            href="https://payhip.com/b/6Utub"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Buy Now
+          </a>
+
+          <p class="buy-note">
+            Secure purchase and digital delivery through Payhip.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+  <div class="container">
+
+    <div class="section-heading">
+      <h2>See what's inside</h2>
+
+      <p>
+        A collection of practical spreadsheets covering some of the most
+        common day-to-day tasks in a small business.
+      </p>
+    </div>
+
+    <div class="gallery">
+
+      <div class="gallery-item">
+        <img
+          src="../assets/images/Alenda-Tools-Bundle-Worldwide-Image-2-Corrected.png"
+          alt="Small Business Spreadsheet Bundle included tools"
+        >
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="../assets/images/Alenda-Tools-Bundle-Worldwide-Image-3-Corrected.png"
+          alt="Excel business spreadsheet bundle features"
+        >
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="../assets/images/Alenda-Tools-Bundle-Worldwide-Image-4-Corrected.png"
+          alt="Small business Excel tools included in bundle"
+        >
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="../assets/images/Alenda-Tools-Bundle-Worldwide-Image-5-Corrected.png"
+          alt="AlendaTools Small Business Spreadsheet Bundle"
+        >
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section class="features">
+  <div class="container">
+
+    <div class="section-heading">
+      <h2>Essential tools in one bundle</h2>
+
+      <p>
+        Built for freelancers, sole traders and small businesses that want
+        practical spreadsheets without paying for complicated software.
+      </p>
+    </div>
+
+    <div class="features-grid">
+
+      <div class="feature">
+        <h3>Manage your numbers</h3>
+        <p>
+          Keep pricing, cash flow, income, expenses and other important
+          business figures organised.
+        </p>
+      </div>
+
+      <div class="feature">
+        <h3>Stay organised</h3>
+        <p>
+          Track invoices, mileage and inventory using straightforward
+          spreadsheets designed for everyday use.
+        </p>
+      </div>
+
+      <div class="feature">
+        <h3>Better value</h3>
+        <p>
+          Get multiple reusable AlendaTools spreadsheets together in one
+          convenient purchase.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section>
+  <div class="container">
+
+    <div class="section-heading">
+      <h2>How it works</h2>
+    </div>
+
+    <div class="how-it-works-grid">
+
+      <div class="step">
+        <div class="step-number">STEP 1</div>
+        <h3>Download the bundle</h3>
+        <p>
+          Purchase once and receive the included spreadsheet tools digitally.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">STEP 2</div>
+        <h3>Choose the tool you need</h3>
+        <p>
+          Open the relevant spreadsheet whenever you need to manage a
+          particular part of your business.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">STEP 3</div>
+        <h3>Reuse your tools</h3>
+        <p>
+          Keep using the spreadsheets as your business records and needs
+          change over time.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section class="cta">
+  <div class="container">
+
+    <h2>Get your essential business spreadsheets in one bundle.</h2>
+
+    <p>
+      Download the Small Business Spreadsheet Bundle and start organising
+      your business with practical, reusable Excel tools.
+    </p>
+
+    <a
+      class="buy-button"
+      href="https://payhip.com/b/6Utub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Get the Spreadsheet Bundle
+    </a>
+
+  </div>
+</section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+
+      <span>© 2026 AlendaTools</span>
+
+      <span>
+        Questions?
+        <a href="mailto:hello@alendatools.com">
+          hello@alendatools.com
+        </a>
+      </span>
+
+    </div>
+  </footer>
+
+</body>
+</html>
