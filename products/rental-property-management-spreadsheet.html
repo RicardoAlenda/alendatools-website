@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rental Property Management Spreadsheet | AlendaTools</title><meta name="description" content="Organise properties, rent payments, tenants, maintenance and finances in one connected Microsoft Excel workbook."><style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f7f5;
+      color: #1d1d1f;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: 0 auto;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e6e6e6;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      opacity: 0.65;
+    }
+
+    .breadcrumb {
+      padding: 28px 0 0;
+      font-size: 0.9rem;
+      color: #6d6d6d;
+    }
+
+    .breadcrumb a {
+      color: #245533;
+      font-weight: 700;
+    }
+
+    .product-hero {
+      padding: 45px 0 70px;
+    }
+
+    .product-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .main-image {
+      background: white;
+      border: 1px solid #e4e4e4;
+      border-radius: 16px;
+      padding: 18px;
+    }
+
+    .main-image img {
+      border-radius: 10px;
+      width: 100%;
+    }
+
+    .product-type {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 6px 11px;
+      border-radius: 999px;
+      background: #eaf3ea;
+      color: #355b39;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+    }
+
+    h1 {
+      font-size: clamp(2.3rem, 5vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: -2px;
+      margin-bottom: 22px;
+    }
+
+    .intro {
+      color: #5d5d5d;
+      font-size: 1.1rem;
+      margin-bottom: 26px;
+    }
+
+    .highlight-box {
+      background: white;
+      border: 1px solid #e2e2e2;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 25px;
+    }
+
+    .highlight-box ul {
+      padding-left: 20px;
+    }
+
+    .highlight-box li {
+      margin-bottom: 8px;
+    }
+
+    .buy-button {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      background: #1f442c;
+      color: white;
+      padding: 16px 24px;
+      border-radius: 9px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      transition: 0.2s;
+    }
+
+    .buy-button:hover {
+      background: #173522;
+    }
+
+    .buy-note {
+      margin-top: 12px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #777;
+    }
+
+    section {
+      padding: 75px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 42px;
+    }
+
+    .section-heading h2 {
+      font-size: 2.1rem;
+      margin-bottom: 10px;
+      letter-spacing: -1px;
+    }
+
+    .section-heading p {
+      color: #666;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .gallery-item {
+      background: white;
+      border: 1px solid #e4e4e4;
+      border-radius: 14px;
+      padding: 14px;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      border-radius: 9px;
+    }
+
+    .features {
+      background: #202820;
+      color: white;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+
+    .feature h3 {
+      margin-bottom: 10px;
+    }
+
+    .feature p {
+      color: #cbd2cb;
+    }
+
+    .how-it-works-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .step {
+      background: white;
+      border: 1px solid #e4e4e4;
+      border-radius: 14px;
+      padding: 28px;
+    }
+
+    .step-number {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #527059;
+      margin-bottom: 10px;
+    }
+
+    .step h3 {
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      color: #666;
+    }
+
+    .cta {
+      background: #e9efe9;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 2rem;
+      margin-bottom: 14px;
+    }
+
+    .cta p {
+      max-width: 620px;
+      margin: 0 auto 25px;
+      color: #5e685f;
+    }
+
+    .cta .buy-button {
+      width: auto;
+      min-width: 220px;
+    }
+
+    footer {
+      background: white;
+      border-top: 1px solid #e4e4e4;
+      padding: 35px 0;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 800px) {
+      .nav-links {
+        display: none;
+      }
+
+      .product-layout,
+      .gallery,
+      .features-grid,
+      .how-it-works-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product-layout {
+        gap: 35px;
+      }
+    }
+  </style></head>
+<body><header><div class="container"><nav><a href="../index.html" class="logo">AlendaTools</a><div class="nav-links"><a href="../index.html#tools">Digital Tools</a><a href="../index.html#why">Why AlendaTools</a><a href="mailto:hello@alendatools.com">Contact</a></div></nav></div></header>
+<main><div class="container breadcrumb"><a href="../index.html">Home</a> &nbsp;→&nbsp; Rental Property Management Spreadsheet</div>
+<section class="product-hero"><div class="container product-layout"><div class="main-image"><img src="../assets/images/rental-property/01.jpg" alt="Rental property spreadsheet cover"></div>
+<div><span class="product-type">Excel Tool</span><h1>Rental Property Management Spreadsheet</h1><p class="intro">Organise properties, rent payments, tenants, maintenance and finances in one connected Microsoft Excel workbook.</p><div class="highlight-box"><ul><li>Eight connected worksheets with an automatic dashboard</li><li>Track rent due, payments and outstanding balances</li><li>Keep property, tenant and maintenance records together</li><li>Review property performance and monthly cash flow</li></ul></div>
+<a class="buy-button" href="https://www.etsy.com/uk/listing/4574054255/rental-property-management-spreadsheet" target="_blank" rel="noopener noreferrer">View on Etsy</a><p class="buy-note">Secure purchase and digital delivery through Etsy.</p></div></div></section>
+<section><div class="container"><div class="section-heading"><h2>See the product</h2><p>Excel workbook, Start Here PDF, Quick Start Guide PDF and digital product licence. Designed for desktop Microsoft Excel. Other spreadsheet apps may display formulas or charts differently.</p></div><div class="gallery"><div class="gallery-item"><img src="../assets/images/rental-property/02.jpg" alt="Rental property workbook overview" loading="lazy"></div><div class="gallery-item"><img src="../assets/images/rental-property/03.jpg" alt="Rental property dashboard" loading="lazy"></div><div class="gallery-item"><img src="../assets/images/rental-property/04.jpg" alt="Rental property tracking preview" loading="lazy"></div><div class="gallery-item"><img src="../assets/images/rental-property/05.jpg" alt="Rent and tenant tracking preview" loading="lazy"></div><div class="gallery-item"><img src="../assets/images/rental-property/06.jpg" alt="Income and expense preview" loading="lazy"></div><div class="gallery-item"><img src="../assets/images/rental-property/07.jpg" alt="Property management workbook preview" loading="lazy"></div><div class="gallery-item"><img src="../assets/images/rental-property/08.jpg" alt="Rental property workbook details" loading="lazy"></div></div></div></section>
+<section class="features"><div class="container"><div class="section-heading"><h2>Made for your day-to-day work</h2></div><div class="features-grid"><div class="feature"><h3>Track rent clearly</h3><p>Record rent due and payments, and see balances and payment status.</p></div><div class="feature"><h3>See the full picture</h3><p>Review rent collected, expenses, net cash flow and outstanding rent.</p></div><div class="feature"><h3>Stay organised</h3><p>Keep properties, tenants and maintenance alongside your financial records.</p></div></div></div></section>
+<section><div class="container"><div class="section-heading"><h2>How it works</h2></div><div class="how-it-works-grid"><div class="step"><div class="step-number">STEP 1</div><h3>Set up your portfolio</h3><p>Replace the sample properties and tenants with your own details.</p></div><div class="step"><div class="step-number">STEP 2</div><h3>Record activity</h3><p>Add rent payments, income, expenses and maintenance work.</p></div><div class="step"><div class="step-number">STEP 3</div><h3>Review the dashboard</h3><p>See the updated figures and property-level performance.</p></div></div></div></section>
+<section class="cta"><div class="container"><h2>Get started with Rental Property Management Spreadsheet.</h2><p>See the complete listing and product details on Etsy.</p><a class="buy-button" href="https://www.etsy.com/uk/listing/4574054255/rental-property-management-spreadsheet" target="_blank" rel="noopener noreferrer">View on Etsy</a></div></section></main>
+<footer><div class="container footer-content"><span>© 2026 AlendaTools</span><span>Questions? <a href="mailto:hello@alendatools.com">hello@alendatools.com</a></span></div></footer></body></html>
